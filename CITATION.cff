@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the paper and its replay supplement."
+title: "Replay supplement for A √(377/250)/(2π) moment-norm ceiling for causal multichannel Eliashberg branches"
+type: software
+version: 1.0.0
+date-released: 2026-11-19
+doi: 10.5281/zenodo.24374034
+url: https://github.com/SuperMatics-Inc/multipoint-eliashberg-ceiling
+license: Apache-2.0
+authors:
+  - family-names: Rens
+    given-names: Davis
+    affiliation: SuperMatics Inc.
+    orcid: https://orcid.org/0000-0001-5839-5197
+preferred-citation:
+  type: unpublished
+  title: "A √(377/250)/(2π) moment-norm ceiling for causal multichannel Eliashberg branches"
+  doi: 10.5281/zenodo.24374032
+  year: 2026
+  authors:
+    - family-names: Rens
+      given-names: Davis
+      affiliation: SuperMatics Inc.
+      orcid: https://orcid.org/0000-0001-5839-5197

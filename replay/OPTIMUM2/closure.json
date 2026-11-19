@@ -1,0 +1,8 @@
+{
+  "schema": "univ-glue-optimum2-proof-closure-v1",
+  "source_sha256": {
+    "SHARP-Q2/RIGOR.md": "7654990f2115df65a039c89b62ace204b5bebdc2c1f208b8aa9837d14dabc086",
+    "CENTERED-GAP/RIGOR.md": "679d7c532b0f4c36b48a0e724bf04feb6698cf31874409ae81b438b9796a3488",
+    "GENERAL/RIGOR.md": "2ff32090c88260d7c8582be2247555f8cc31e862a39aea6e69497d5a49b17792"
+  }
+}

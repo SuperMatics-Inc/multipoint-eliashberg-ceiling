@@ -1,0 +1,199 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\PredecessorDOI}{\url{https://doi.org/10.5281/zenodo.24372930}}
+\newcommand{\DOI}[1]{\mbox{\href{https://doi.org/#1}{\nolinkurl{#1}}}}
+\newcommand*{\OPTIMUMDOI}{10.5281/zenodo.24374032}
+\newcommand*{\OPTIMUMSUPPDOI}{10.5281/zenodo.24374034}
+\newcommand*{\OPTIMUMREPO}{https://github.com/SuperMatics-Inc/multipoint-eliashberg-ceiling}
+\newcommand{\ifstaged}[3]{\ifx#1\empty #3\else #2\fi}
+\title{A $\sqrt{377/250}/(2\pi)$ moment-norm ceiling for causal multichannel Eliashberg branches}
+\author{Davis Rens\\SuperMatics Inc.\\\href{https://orcid.org/0000-0001-5839-5197}{ORCID 0000-0001-5839-5197}}
+\date{19 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We improve a moment-norm ceiling for a reciprocal reduced Eliashberg model with channel-dependent bounded densities of states. The argument retains the first twenty unavoidable head-to-tail contributions and combines them with a sharper two-head matrix estimate. Two independent exact rational coverings certify the remaining inequality. On centered normal branches, and on shifted branches with a channel-wise causal radial propagator, the resulting strict coefficient is $\sqrt{377/250}/(2\pi)$, approximately $0.19544330695$. The optimal coefficient remains between the sharp scalar constant $C_\infty$ and this upper bound. A finite two-channel search finds no certified counterexample to the scalar coefficient. The distinction between a causal constraint on a few DOS averages and an actual self-consistent normal branch remains essential.
+The remaining relative gap $(C_{21}-C_\infty)/C_\infty$ is approximately $7.0\%$; neither endpoint comparison establishes the sharp coupled coefficient.
+\end{abstract}
+
+\section{Introduction}
+A moment ceiling in Eliashberg theory concerns the linear instability of a specified normal branch. It is not a bound on the exact thermodynamic transition of every electron Hamiltonian. The sharp scalar result uses the total retarded glue moment and the essential height of the electronic density of states \cite{finite,gsi}. Its extension to coupled channels with distinct energy-dependent DOS profiles has a separate difficulty: lowering a DOS weight weakens both pairing and the normal mass that opposes it.
+
+The predecessor note, \emph{What a glue moment bounds in linear Eliashberg theory} \cite{predecessor}, gives a conditional moment-operator bound for this coupled problem. On its centered branch class the coefficient is $\sqrt{6466219/3576050}/(2\pi)$. An additive first-frequency comparison reduces it to $\sqrt{413/250}/(2\pi)$. Here we strengthen that comparison using twenty tail frequencies and a rational lower bound for the two-head eigenvalue. The resulting coefficient is smaller without requiring a common DOS, a common soft-spectrum limit, or an angular Perron eigenvector. Sharpness and the comparison of full shifted and centered branches remain open.
+
+Dolgov and Golubov \cite{dolgov} showed that, for attractive multiband interactions with nonzero average coupling, treated in the Born approximation, the upper bound on $T_c$ in the superstrong-coupling regime is governed by a partial-density-of-states-weighted average of the coupling moments, and that the larger bound set by the maximal eigenvalue of the moment matrix is not reached. That result is asymptotic and for attractive couplings, not a bound over arbitrary matrices; our coefficient is an upper bound in the moment norm, and its gap from averaged-coupling behaviour is part of the open sharpness question.
+
+All mathematical statements are \textbf{PROVED} under their explicit hypotheses, with the finite covering inequality \textbf{CERTIFIED} by exact rational replay. Decimal evaluations and finite normal solves are \textbf{NUMERICAL}. The labels refer to mathematical or computational evidence, not to measurements.
+
+\section{Model and branch hypotheses}
+Use finitely many positive-height channels with height measure $d\eta$. The reciprocal nonnegative positive-energy measures $d\mathfrak m_{xy}(E)$ define a moment matrix $\mathcal M$ with norm $0<\rho<\infty$. Radial vertices are energy independent. At each tested temperature the normal frequency rows, including zero transfer, are bounded. No common temperature-independent row bound is assumed. Each DOS is a fixed measurable profile between zero and its essential height.
+
+An actual positive reflected normal branch solves the matched imaginary equation. The centered even-profile class uses the established width cone $s_n/w_n$ nonincreasing and $w_ns_n$ nondecreasing. In the shifted class, $Z_x(z)=z-\Sigma_x(z)$ is a holomorphic upper-half-plane self-map, representing each radial propagator $(Z_x(z)-\xi)^{-1}$. Passivity of the glue alone does not prove this branch property. A larger normal kernel is allowed only through odd-folded dominance of the pairing envelope. Bounded PSD pairing-only subtraction is harmless. A symmetry-sector application requires its propagator and envelope to preserve that sector.
+
+Put $\tau=k_BT$, $w_n=2n+1$, and let $b_{n,x}$ be the height-normalized DOS Poisson averages. A causal branch has the necessary inequalities
+\begin{equation}
+ 0\le b_{n,x}\le1,\qquad
+ b_{m,x}\ge b_{0,x}/w_m,\qquad
+ b_{m,x}\ge w_mb_{0,x}-(w_m-1).\label{eq:weights}
+\end{equation}
+Indeed, the normalized DOS Cauchy transform, with a real subtraction if needed, has imaginary part in $[0,1]$. After composition with $Z_x$, Harnack's inequality applies both to that harmonic function and to its complement. The Harnack ratio between $i\pi\tau$ and $i\pi\tau w_m$ is $w_m$. On centered branches the width cone gives $w_m^{-1}\le s_m/s_0\le w_m$; the centered Poisson kernel ratios lie in the same interval. Integrating the DOS and its complement proves \eqref{eq:weights} there as well.
+
+For a unit atom write
+\[
+ t=(E/(2\pi\tau))^2>0,\quad k_j=(t+j^2)^{-1},\quad
+ p_{nm}=k_{|n-m|}-k_{n+m+1},\quad S_{nm}=k_{|n-m|}+k_{n+m+1}.
+\]
+For finite-support trials let $g_{n,x}=\sqrt{w_nb_{n,x}}v_{n,x}$ and
+\[
+ B_r=r^{-1}\|g_x\|^2+r\|g_y\|^2,\qquad r>0,
+\]
+\[
+ I_{xy}=\sum_{n,m}b_{n,x}b_{m,y}
+ [p_{nm}(|v_{n,x}|^2+|v_{m,y}|^2)-2S_{nm}\Re(\bar v_{n,x}v_{m,y})].
+\]
+The folded stability form is
+\begin{equation}
+ Q=\int\|g_x\|^2d\eta(x)+\frac1{2(2\pi\tau)^2}
+ \iint\!\int I_{xy}\,d\mathfrak m_{xy}\,d\eta(x)d\eta(y).\label{eq:form}
+\end{equation}
+This fixes the ordered-edge factor one half and retains the negative normal mass cancellation. The moment norm is taken in height measure, not as an angular average or a signed pairing-channel moment.
+
+\begin{theorem}[Multipoint moment-norm ceiling]
+Under the preceding model and branch hypotheses,
+\[
+ \tau_{\rm lin}<C_{21}\sqrt\rho,\qquad C_{21}=\frac{\sqrt{377/250}}{2\pi}.
+\]
+The calculated value is approximately $0.19544330695$. Since $377/250<413/250$, this improves the first-frequency bound. The optimal coefficient remains \textbf{OPEN} in $[C_\infty,C_{21}]$.
+\end{theorem}
+
+\section{A sharper head estimate}
+When both frequency-zero weights are one, normalization by $B_r$ gives
+\[
+ H_0=\begin{pmatrix}1+\beta r&-\beta-u\\-\beta-u&1+\beta/r\end{pmatrix},
+ \quad u=(1+t)^{-1},\quad\beta=[2t(1+t)]^{-1}.
+\]
+Set $R=r+r^{-1}$ and $a=2/R$. In the null/eigenvector basis of the rank-one beta part the diagonals are $h=1-ua$ and $h+G$, where $G=\beta R+2ua$. The off-diagonal has squared magnitude $c^2=u^2(1-a^2)$. Completing a square,
+\[
+ G(Gy^2-2cxy)+c^2(x^2+y^2)=(Gy-cx)^2+c^2y^2,
+\]
+shows $H_0\succeq e_2I$, with
+\begin{equation}
+ e_2(r,t)=1-\frac{a(1+t+ta^2)}{(1+t)(1+2ta^2)}.\label{eq:head}
+\end{equation}
+The continuous value at $t=0$ is $1-a$. This is a lower bound for the eigenvalue, not its asserted exact value. It is at least $1-a$ for all $t\ge0$. On $0\le t<1/2$ it increases with t and decreases with a:
+\[
+ \partial_te_2=\frac{a^3[1+4t+2(1+a^2)t^2]}{(1+t)^2(1+2ta^2)^2}\ge0,
+\]
+\[
+ \partial_ae_2=-\frac{1+t+t(1-2t)a^2+2t^2a^4}{(1+t)(1+2ta^2)^2}\le0.
+\]
+The older bound $H_0\succeq[t/(1+t)]I$ follows by dropping the positive beta square.
+
+For arbitrary head weights, keep v fixed and average four independent endpoint masks. The unnormalized edge quadratic is separately affine in the two weights. A sole active head has reserve 1; both active heads have reserve $e_2$. Thus the x-head receives $1-b_{0,y}+e_2b_{0,y}$ before mixed completions. On a loop use two endpoint copies before identifying the actual profiles. This reproduces products of weights, not their first powers.
+
+\section{Twenty unavoidable mixed contributions}
+The reflected tail Hankel matrix $k_{n+m+1}/\sqrt{w_nw_m}$, $n,m\ge1$, has norm below $q=33/500$. Schur weights $w_n^{-1/2}$ give the largest soft row at n=1:
+\[
+ \sum_{m\ge1}\frac1{(2m+1)(m+2)^2}
+ \le\frac{46364886969645845897}{707706794762032665600}<\frac{33}{500}.
+\]
+The replay keeps sixteen exact terms and uses the remainder $1/(4\cdot16^2)$. Nonnegative ordinary-transfer difference squares are retained or dropped only in the favorable direction.
+
+Allocate $\alpha=343/500$ of each tail bare norm to its head interaction. For $w_m=2m+1$, put
+\[
+ p_m=\frac{w_m}{(t+m^2)(t+(m+1)^2)},\qquad
+ S_m=\frac1{t+m^2}+\frac1{t+(m+1)^2}.
+\]
+Completing the mixed square while retaining its positive tail normal mass leaves
+\begin{equation}
+ D_m(r,t)=\frac{rp_m}{2}-\frac{S_m^2}{4w_m(\alpha+p_m/(2rw_m))}
+ =\frac{p_m(r\alpha/2-w_m^{-2})}{\alpha+p_m/(2rw_m)}.\label{eq:completion}
+\end{equation}
+The identity $S_m^2-p_m^2=4p_m/w_m$ verifies the formula. The worst own-head weight is one; smaller own-head weights do not increase the square-completion loss. For $1/3\le r\le3$, all these residuals are positive, increase with r and p, and therefore decrease with t. The remaining tail reserve is
+\[
+ 1-q-\alpha=31/125>247/1000.
+\]
+
+Far allocations are handled without a finite cutoff. For $r\le1/4$, the head reserve is at least $9/17$ and its total possible mixed loss is at most
+\[
+ L=\frac1{4\alpha}\sum_{m\ge1}S_m^2/w_m\le\frac{59}{384\alpha},
+\]
+so $9/17-L>247/1000$. The constant uses $S_1^2/3\le25/48$ and $\sum_{m\ge2}S_m^2/w_m\le2\sum_{m\ge2}m^{-5}\le3/32$. For $1/4\le r\le1/3$, only $D_1$ can be negative and $D_1\ge-1/32$; the head reserve is at least $2/5$. Consequently $2/5-1/32>247/1000$. Reciprocity covers the corresponding large-r ranges.
+
+In balanced allocations, retain the first twenty positive completions and use \eqref{eq:weights}. Each head, with opposing head weight b, has reserve at least
+\begin{equation}
+ F_{r,t}(b)=1-b+e_2(r,t)b+
+ \sum_{m=1}^{20}D_m(r,t)\max\{w_mb-(w_m-1),0\}.\label{eq:residual}
+\end{equation}
+Its minimum on $[0,1]$ occurs at 0, 1, or $2m/(2m+1)$ for $1\le m\le20$. Higher mixed frequencies have nonnegative residuals and need not be included.
+
+\section{Exact covering and strict onset}
+Keep the certified reserve and the weaker reported reserve distinct:
+\[
+ d_*=247/1000,\qquad d=123/500,\qquad T=d_*/(1-d_*)=247/753<1/2.
+\]
+For $t\ge T$, the head bound $t/(1+t)\ge d_*$ suffices. For smaller t cover $[1/3,3]\times[0,T]$ by closed rational rectangles. On $[l,h]\times[x,y]$, evaluate \eqref{eq:head} at
+\[
+ a_{\max}=\frac2{\min_{r\in[l,h]}(r+r^{-1})},\qquad t=x,
+\]
+and each \eqref{eq:completion} at $(r,t)=(l,y)$. If the r interval contains 1 its exact R minimum is 2. The proved monotonicities make these outward lower bounds. Evaluate all twenty-two breakpoints in \eqref{eq:residual} exactly.
+
+The primary binary covering accepts 537 leaves, each at least $d_*$. Its rectangles fill their parents at every split, and exact accepted areas add to $(8/3)T$. The independent implementation uses four-way subdivision, the unreduced head square expression and a different rationalization of \eqref{eq:completion}. It imports no primary implementation. Both have bounded-depth refusal guards. These are exhaustive rational coverings, not sampled interpolation. Supplementary finite matrices are not the certificate.
+
+The tail and far-allocation estimates complete the edge inequality
+\[
+ B_r+I_{xy}/2\ge d_*B_r.
+\]
+Include the required frequencies with zero trial amplitudes if absent, but retain their nonnegative normal contributions. For $R'>\rho$, let $h=(I-\mathcal M/R')^{-1}\mathbf1$ and allocate $r=h_x/h_y$. Reciprocity and both endpoint allocations in \eqref{eq:form} give
+\[
+ Q\ge\left[1-\frac{2(1-d_*)R'}{(2\pi\tau)^2}\right]\|g\|^2.
+\]
+Let $R'\downarrow\rho$. At every temperature with $(2\pi\tau)^2\ge(1507/1000)\rho$, the bare gap is at least $1/1507$. The width comparison gives a symmetrized gap at least $1/[1507(1+R(\tau))]$, where the normal row bound $R(\tau)$ need only be finite at that temperature. Thus the entire higher-temperature interval is stable. Since $1507/1000<2(1-d)=377/250$, its lower endpoint lies strictly below the reported ceiling. No uniform-in-temperature row bound is used. Odd-folded extra normal mass and PSD subtraction add positive costs.
+
+\section{A lower-side test and the shifted question}
+If a positive-width DOS average $b_0$ equals one, the DOS is full height almost everywhere and every $b_m$ is one. A full-head, suppressed-tail extremizer is not an actual normal DOS branch. The flat-DOS family is already covered by the sharp angular theorem \cite{gsi}.
+
+A \textbf{NUMERICAL} search solved 160 finite centered two-channel normal equations at $\tau=C_\infty$, with unit moment norm. It included flat DOS, one flat and one box, unequal boxes, shells and random reciprocal moment matrices. The greatest coarse gain was a tiny excess in the equal-channel flat case:
+\[
+\begin{array}{c|c|c}
+\text{normal cutoff}&\text{pair cutoff}&\text{gain}\\\hline
+64&32&1.0000000139673306\\
+96&48&0.9999999987746481\\
+160&80&0.9999999909813821
+\end{array}
+\]
+The late change is about $7.8\times10^{-9}$, an empirical cutoff difference rather than a rigorous error. This candidate is \textbf{KILLED} as a counterexample by the known flat theorem. Six-point Pick positivity was tested only as a necessary condition; it does not certify full causal continuation. No certified causal nonflat counterexample was found, and no absence theorem follows from the finite search.
+
+\begin{proposition}[Two-frequency Poisson relaxation]
+Every causal first Matsubara pair obeys
+\[
+ b_1\ge\frac2\pi\arctan\left[\frac13\tan(\pi b_0/2)\right],\qquad b_1\ge b_0-\frac13.
+\]
+Centered points i and 3i with an even interval DOS attain this relaxed boundary. This does not compare full self-consistent onset temperatures.
+\end{proposition}
+\begin{proof}
+Schwarz--Pick bounds the output pseudohyperbolic distance by $1/2$. A real-boundary Mobius automorphism sends the ordered pair to i and ih, $1\le h\le3$. Harmonic-measure invariance preserves both averages and the DOS box constraint; even symmetrization preserves the canonical averages.
+
+At fixed first average, the central interval $[-W,W]$, $W=\tan(\pi b_0/2)$, minimizes the second. The second-to-first Poisson density ratio increases with absolute energy. Subtract the interval indicator from a competing DOS and multiply by $q_{ih}-cq_i$, where $c=q_{ih}(W)/q_i(W)$. The product is nonnegative both inside and outside the interval, and the first-average term integrates to zero. The interval's second average is $(2/\pi)\arctan(W/h)$, minimized at h=3. The largest difference occurs at $W=\sqrt h$ and at h=3 equals $1/3$. Limits cover the endpoints.
+\end{proof}
+The boundary transformation need not preserve DOS integrability, the physical transfer, or the imaginary and relative-real equations at all frequencies. Full shifted-versus-centered comparison is \textbf{OPEN}, as is the sharp coupled coefficient.
+
+\section{Evidence and boundaries}
+The distribution contains both rational coverings, fourteen guarded sign, coefficient, mass, coverage and units mutants, finite Lean 4 lemmas, the complete proof and three byte-pinned inherited analytic inputs. Lean checks polynomial identities and rational budgets only. It does not formalize the infinite operator, the covering algorithm, Harnack or the Poisson rearrangement. The scalar lower endpoint is imported from its existing sharp soft family, not newly fitted.
+
+\textbf{[INFERENCE] prior-work assessment.} We reuse the verified predecessor dossier and its targeted metadata search covering 19 September through 19 November 2026. That is not an exhaustive novelty check. The harmonic and matrix tools are classical; no priority claim is made. The added comparison with Dolgov and Golubov \cite{dolgov} was checked against their full text. This refinement does not settle the sharp coupled coefficient or establish a general many-body ceiling.
+
+\section*{Supporting material and disclosure}
+\ifstaged{\OPTIMUMDOI}{\noindent Article DOI: \expandafter\DOI\expandafter{\OPTIMUMDOI}\par}{}
+\ifstaged{\OPTIMUMSUPPDOI}{\noindent Supplement DOI: \expandafter\DOI\expandafter{\OPTIMUMSUPPDOI}\par}{}
+\ifstaged{\OPTIMUMREPO}{\noindent Source repository: \expandafter\url\expandafter{\OPTIMUMREPO}\par}{}
+\noindent This preprint has not been peer reviewed. AI agents generated proofs, certificates, code, and manuscript drafts and edits under D. Rens' direction and review.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+\end{document}

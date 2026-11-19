@@ -1,0 +1,93 @@
+{
+  "schema": "univ-glue-optimum2-source-closure-v1",
+  "claim": "PROVED with a CERTIFIED rational covering under RIGOR.md hypotheses; sharpness OPEN",
+  "coefficient": "sqrt(377/250)/(2*pi)",
+  "certified_reserve": "247/1000",
+  "reported_reserve": "123/500",
+  "members": {
+    "BUILD.txt": {
+      "sha256": "c6660b148c3e4ccc276145b50e51be218a3e923db04914aa1d52c1c768ca5fb1",
+      "bytes": 823
+    },
+    "CENTERED-GAP/RIGOR.md": {
+      "sha256": "679d7c532b0f4c36b48a0e724bf04feb6698cf31874409ae81b438b9796a3488",
+      "bytes": 9588
+    },
+    "GENERAL/RIGOR.md": {
+      "sha256": "2ff32090c88260d7c8582be2247555f8cc31e862a39aea6e69497d5a49b17792",
+      "bytes": 18077
+    },
+    "OPTIMUM/RIGOR.md": {
+      "sha256": "59e95d2e5c8f8695a74ad634dba31a6b785c39472dbfaf07248d60607404b367",
+      "bytes": 16446
+    },
+    "OPTIMUM2/Finite.lean": {
+      "sha256": "fec36cbd0029213bca2dd29127c57f6739bebddbc3eb7d96dbe4403477b4deb9",
+      "bytes": 871
+    },
+    "OPTIMUM2/RESULT.md": {
+      "sha256": "53f7b04a065c4e80aacdf47c19cc7bbb63d5fa8c2a7c2959225987543cdaac9e",
+      "bytes": 7108
+    },
+    "OPTIMUM2/RIGOR.md": {
+      "sha256": "2907be1aa3cf6389635871751fd2435d88defd8a5c77846e7736cec138bd624f",
+      "bytes": 14605
+    },
+    "OPTIMUM2/SEARCH.json": {
+      "sha256": "308264b86b9330fd0b56c94b63ede49b2848d8c60ca7fb2fc292f599f685126c",
+      "bytes": 226771
+    },
+    "OPTIMUM2/SEARCH.txt": {
+      "sha256": "1481cb2a0a399ba8bb850371fe67324f830940651dc1b6c19d84f0f054b1c650",
+      "bytes": 2273
+    },
+    "OPTIMUM2/VERIFICATION.txt": {
+      "sha256": "111ae8efa23896a976e8f5b7f05e487a4971142be1ac4d46e9d5b18fadcc2fee",
+      "bytes": 3920
+    },
+    "OPTIMUM2/clean_copy.py": {
+      "sha256": "75e585c3fa7f042439e256a9543f8e1a5fc7f186abe086aa0070e44b8bb0780e",
+      "bytes": 2815
+    },
+    "OPTIMUM2/closure.json": {
+      "sha256": "8d66b9b98d0bc9fdf148ec72bffcf60fe659cb85fa337b6d9f4945257931d768",
+      "bytes": 361
+    },
+    "OPTIMUM2/independent.py": {
+      "sha256": "a5d351963bf44488516192eadfc5679084e53f9352b18b1b24ca4c06bde50099",
+      "bytes": 4460
+    },
+    "OPTIMUM2/replay.py": {
+      "sha256": "5632ef3753b80904c39b8d7763a4ab08ca923d322f4b623c6b5806b963278524",
+      "bytes": 4563
+    },
+    "OPTIMUM2/search.py": {
+      "sha256": "6ea59abf517684cb2f5dfb8f99375ee24e979d8c64409c76d63d34b74604429b",
+      "bytes": 6145
+    },
+    "OPTIMUM2/verify.py": {
+      "sha256": "65859e09fedab999ec370fa9fb40c62c751ec56ede0b07a9b0d5e55eb06e5392",
+      "bytes": 1452
+    },
+    "README.md": {
+      "sha256": "7fc10cf48bd01bdf2ac3d889e3e1204f265ef67fa10aaf9612821759293eca7a",
+      "bytes": 3755
+    },
+    "SHARP-Q2/RIGOR.md": {
+      "sha256": "7654990f2115df65a039c89b62ace204b5bebdc2c1f208b8aa9837d14dabc086",
+      "bytes": 9641
+    },
+    "main.pdf": {
+      "sha256": "393ab67e5b3918eae19b56553e8c1b8037f73e828c256bf52a047e260b488ca5",
+      "bytes": 94483
+    },
+    "main.tex": {
+      "sha256": "17097afada28b456c70a07cecf6aa1ea6fc98b358ff8baa4bd9cb9a7459cce6e",
+      "bytes": 15736
+    },
+    "refs.bib": {
+      "sha256": "c0031a8c9ec50d8c24b538d590fef28a0d21c8d38ad31264ad70c0a12342275e",
+      "bytes": 743
+    }
+  }
+}

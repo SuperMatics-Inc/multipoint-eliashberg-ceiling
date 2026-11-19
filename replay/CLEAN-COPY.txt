@@ -1,0 +1,58 @@
+ADMITTED source manifest 1fb9fcb783b3ca3fd1c595a5645d32011bcba9500aaafb12d5237966fd75bd9f
+PASS raw-byte member admission and isolated copies: 21
+CERTIFIED 21-point covering: 537 leaves; 1072 nodes; depth 21
+Exact smallest leaf bound: 135311373251818986815698734749077728122526222816876530360813167024320541847385621728533549276358415590880665460669421423190698982154841756229232480074113421956996259/547819131138469249327457164734818767217143304218338691037649425726253836816684861592818703605037458197881431493346742440841432811961067793250686308219720737787567907
+Analytic import: allocated reserve >=247/1000; strict squared ceiling numerator=377/250
+EXIT 0 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py']
+REJECT: sharper head square completion
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'head-square']
+REJECT: sharper head rationalization
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'head-denominator']
+REJECT: all retained head-tail completion identities
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'moment-sign']
+REJECT: exhaustive residual multipoint covering closes
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'complement-factor']
+REJECT: infinite tail and allocated reserve
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'tail-budget']
+REJECT: unbalanced allocation reserves
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'far-loss']
+REJECT: complete residual domain without gaps
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'coverage-gap']
+REJECT: strict reported onset reserve
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'strict-budget']
+REJECT: ordered edges and temperature units
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'replay.py', '--mutant', 'edge-factor']
+CERTIFIED independent multipoint cover: 437 leaves; depth 10
+CERTIFIED supplementary finite forms: 72
+Analytic import: full-head Poisson equality forces flat DOS almost everywhere
+EXIT 0 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py']
+REJECT: independent complete rectangle area
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py', '--mutant', 'volume-copy']
+REJECT: independent completion identity
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py', '--mutant', 'completion-coefficient']
+REJECT: actual-weight finite form with retained normal mass
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py', '--mutant', 'matrix-gain']
+REJECT: actual-weight finite form with retained normal mass
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py', '--mutant', 'missing-normal-mass']
+REJECT: near-tight full-head Poisson admissibility
+EXIT 1 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'independent.py', '--mutant', 'flat-admissibility']
+EXIT 0 COMMAND ['C:/Users/davis/.elan/bin/elan.exe', 'run', 'leanprover/lean4:v4.35.0', 'lean', '--threads=1', '--memory=500', 'Finite.lean']
+PASS: two exact bases; fourteen guarded mutants; finite Lean 4.35.0
+EXIT 0 COMMAND ['C:\\Users\\davis\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-I', '-B', 'OPTIMUM2/verify.py']
+note: using only cached resource files
+note: Running TeX ...
+Fontconfig error: Cannot load default config file: No such file: (null)
+note: Running BibTeX on main.aux ...
+note: Rerunning TeX because bibtex was run ...
+warning: main.bbl:8: Underfull \hbox (badness 2662) in paragraph at lines 4--8
+warning: main.bbl:8: Underfull \hbox (badness 5345) in paragraph at lines 4--8
+note: Rerunning TeX because "main.aux" changed ...
+warning: main.bbl:8: Underfull \hbox (badness 2662) in paragraph at lines 4--8
+warning: main.bbl:8: Underfull \hbox (badness 5345) in paragraph at lines 4--8
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `main.pdf` (92.2685546875 KiB)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
+EXIT 0 COMMAND ['D:/dev/tools/tectonic/tectonic.exe', '--only-cached', 'main.tex']
+PASS fresh PDF page-text identity: 6 pages
+PASS: clean-copy replay, fourteen guarded mutants, finite Lean, fresh paper; owned temporary directory removed
